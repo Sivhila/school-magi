@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "tempusdominus-core": "^5.19.3"
+  }
+}

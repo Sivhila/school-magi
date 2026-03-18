@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h3>Enter Marks</h3>
+
+<form method="POST">
+	
+	<table class="table table-boardered">
+		<tr>
+			<th>Admission</th>
+			<th>Name</th>
+			<th>Marks</th>
+		</tr>
+
+		{% for student in students %}
+		<tr>
+			<td>{{ student.admission_no }}</td>
+			<td>{{ student.full_name }}</td>
+			<td>
+				<input
+					type="number"
+					name="marks_{{ student.id }}"
+					class="form-control"
+					min="0"
+					max="100"
+					required>
+			</td>
+		</tr>
+		{% endfor %}
+
+	</table>
+
+	<button class="btn btn-success">
+		Save Results
+	</button>
+
+</form>
+
+{% endblock %}

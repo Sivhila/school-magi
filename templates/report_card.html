@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="card-hearder">
+	<h3>lass="card-body">
+		<h4>{{ student.full_name }}</h4>
+		<p>Admission No: {{ student.admission_no }}</p>
+		<p>Class: {{ student.school_class.name }}</p>
+
+		<table class="table table-bordered">
+
+		<tr>
+			<th>Subject</th>
+			<th>Marks</th>
+			<th>Grade</th>
+		</tr>
+
+		{% for r in report %}
+		<tr>
+			<td>{{ r.subject }}</td>
+			<td>{{ r.marks }}</td>
+			<td>{[ r.grade }}</td>
+		</tr>
+		{% endfor %}
+
+		</table>
+
+		<hr>
+
+		<h5>Total Marks: {{ total }}</h5>
+		<h5>Average: {{ average }}</h5>
+		<h5>Final Grade: {{ final_grade }}</h5>
+
+		<a href="/report-card/pdf/{{ student.id }}/{{ term_id }}"
+		   class="btn btn-success">
+			Download PDF Report Card
+		</a>
+
+</div>
+</div>
+
+{% endblock %}

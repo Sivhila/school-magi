@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h3>Upload Class Material</h3>
+
+<form method="POST" enctype="multipart/form-data">
+
+	<div class="form-group">
+		<label>Title</label>
+		<input type="text" name="title" class="form-control" required>
+	</div>
+
+	<div class="form-group">
+		<label>Class</label>
+		<select name="class_id" class="form-control">
+
+			{% for c in classes %}
+			<option value="{{ c.id }}">{{ c.name }}</option>
+			{% endfor %}
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label>Subject</label>
+		<select name="subject_id" class="form-control">
+
+			{% for s in subjects %}
+			<option value="{{ s.id }}">{{ s.name }}</option>
+			{% endfor %}
+			
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label>Upload File (PDF)</label>
+		<input type="file" name="file" class="form-control" required>
+	</div>
+
+	<br>
+
+	<button class="btn btn-primary">Upload</button>
+
+</form>
+
+{% endblock %}

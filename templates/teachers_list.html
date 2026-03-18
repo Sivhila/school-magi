@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h3>Teachers</h3>
+
+<a href="/teachers/register" class="btn btn-primary mb-3">
+	Add Teacher
+</a>
+
+<table class="table table-bordered">
+
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Phone</th>
+	</tr>
+
+	{% for t in teachers %}
+	<tr>
+		<td>{{ t.id }}</td>
+		<td>{{ t.full_name</td>
+		<td>{{ t.phone }}</td>
+	</tr>
+
+	{% endfor %}
+
+</table>
+
+{% endblock %}
+

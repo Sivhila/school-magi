@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+	<div class="card">
+
+		<div class="card-header bg-info text-white">
+			<h4>Class Assignments</h4>
+		</div>
+
+		<div class="card-body">
+			
+			<table class="table table-bordered table-striped">
+
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Subject</th>
+						<th>Due Date</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+					{% for assignment in assignments %}
+					<tr>
+						<td>{{ assignment.title }}</td>
+						<td>{{ assignment.desription</td>
+						<td>{{ assignment.subject.name }}</td>
+						<td>{{ assignment.due_date }}</td>
+						<td>
+							<span class="badge bg-warning">Pending</span>
+						</td>
+					</tr>
+
+					{% endfor %}
+
+				</tbody>
+
+			</table>
+
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
